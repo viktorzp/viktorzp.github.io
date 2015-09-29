@@ -1,0 +1,59 @@
+@import url(reset.css);
+
+body, html {height:100%;}
+body {margin:0;height:100%;}
+#canvasWrapper{
+
+	margin: 10px;
+}
+.btn, #clientGameStatus{
+	margin: 25px 10px 10px 10px ;
+}
+canvas#dotsGame {
+    background:transparent url(../images/sqr.png) repeat left top;
+}
+#scoreWrapp{
+	position:relative;
+    left: 100px;
+    top : 20px;
+
+}
+#movesWrapper{
+	display: block;
+	width: 200px;
+	height: 20px;
+	font: bold 17px Arial;
+}
+#pl1, #pl2{
+	position: absolute;
+	display: block;
+	margin: 5px 0;
+	font: bold 17px Arial;
+}
+#pl1{
+	top: 0px;
+	color: #fff;
+	z-index:100;
+}
+#pl2{
+	top: 25px;
+	color: #0000ff;
+	z-index:100;
+}
+#curMove{
+	font: bold 17px Arial;
+	display: block;
+	margin: 10px;
+	font: bold 17px Arial;
+}
+#movePlayerWrap{
+	position: absolute;
+	top: 2px;
+	left: -2px;
+	font: bold 17px Arial;
+	width: 150px;
+	height: 25px;
+	border: 1px solid #ff0000;
+	background-color: #ff0000;
+	z-index:5;
+}

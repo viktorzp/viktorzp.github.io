@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="dots">
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/bootstrap-theme.css" rel="stylesheet" />
+		<script src="bower_components/angular/angular.js"></script>
+<!--	<script src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script> -->	
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="js/jquery.color-2.1.0.min.js" ></script>
+		<script src="https://protected-brushlands-5546.herokuapp.com/socket.io/socket.io.js"></script>		
+		<script src="./bower_components/angular-socket-io/socket.js"></script> 
+		<script src="js/dots.js"></script>
+		<script src="js/dotsClient.js"></script>
+
+	</head>
+	<body>
+		<div ng-controller="dotsCtrl">
+			<div id="scoreWrapp">
+				<div id="pl1">Красный игрок: <span id="redScore">{{redScore}}</span></div>
+				<div id="pl2">Синий игрок: <span id="blueScore">{{blueScore}}</span></div>
+				<div id="movePlayerWrap"></div>
+			</div>
+			<button ng-disabled="disableButton" ng-click="connectServer()" class="btn btn-default" >Играть</button>
+			<div id="clientGameStatus"></div>
+			<div id="curMove" ng-hide="showHide">Ходит <span id="plMove">{{currentMove}}</span> игрок</div>
+			<div ng-hide="showHide" id="canvasWrapper">
+				<canvas id='dotsGame' width='{{data.verge + 1}}' height='{{data.verge + 1}}' ng-click="getCoordinates($event)" ng-mousemove="catchMove($event)"></canvas>
+				<div id="movesWrapper">Ходов осталось - <span id="moves">{{data.movesLeft}}</span></div>
+			</div>
+			
+		</div>
+  </body>
+</html>
